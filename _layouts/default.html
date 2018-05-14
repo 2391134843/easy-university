@@ -1,43 +1,39 @@
 ---
 layout: compress
 ---
+
 <!DOCTYPE html>
 <html lang="en">
+
 {% include head.html %}
+
 <body>
-<header>
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-  {% include menu-links.html %}
-</div>
+    <header>
+        <a href="/" class="header-tab">
+            <h2>开放平台</h2>
+        </a>
+        <a href="/">
+            <h1 class="header-title">{{ site.title }}</h1>
+            <h2 class="header-tagline">致力于为大学新生提供全方位指南</h2>
+        </a>
+        <a href="/" class="header-tab">
+            <h2>官方平台</h2>
+        </a>
+    </header>
 
-<!-- Use any element to open the sidenav -->
-<span id="slid" onclick="openNav()"><i class="fa fa-align-left" aria-hidden="true"></i></span>
-<a href="{{site.baseurl}}/"><h1 class="header-title">{{site.title}}<i class="fa fa-sun-o" aria-hidden="true"></i> </h1></a>
-<h2 class="header-tagline">Son of the Sun</h2>
-</header>
-<div id="main">
+    <div id="main">
 
+        {{content}}
 
+        {% include footer.html %}
 
+    </div>
 
-{{content}}
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    {% include analytics.html %}
 
-
-{% include footer.html %}
-
-</div>
-<script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-}
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";    
-}
-</script>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
-{% include analytics.html %}
 </body>
+
 </html>
